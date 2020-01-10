@@ -1,20 +1,30 @@
-/*package manager console migrations*/
+*********************************
+migration commands
+*********************************
 enable-migrations
 add-migration initial_migration
 update-database -force -verbose
 
-/*libs*/
+
+*********************************
+libraries
+*********************************
 EntityFramework 
 Autofac 
 Autofac.Integration
 
-
-/*Frontend*/
+*********************************
+Frontend frameworks
+*********************************
 AngularJS
 Angular-route
 Angular.Bootstrap
 
 
+
+*********************************
+git basics
+*********************************
 git remote add origin git@git.assembla.com:portfolio/space.space_name.git
 
 git add . 
