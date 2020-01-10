@@ -25,6 +25,9 @@ Angular.Bootstrap
 *********************************
 git basics
 *********************************
+
+git clone https://github.com/smallkid/DesignPatternAndPrincipleDemo.git
+
 git remote add origin git@git.assembla.com:portfolio/space.space_name.git
 
 git add . 
