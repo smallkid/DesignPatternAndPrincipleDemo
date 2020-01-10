@@ -13,6 +13,7 @@ namespace DesignPatternAndPrincipleDemo
     {
         protected void Application_Start()
         {
+            IoCBootstrapper.RegisterDependencies();
             AreaRegistration.RegisterAllAreas();
             GlobalConfiguration.Configure(WebApiConfig.Register);
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

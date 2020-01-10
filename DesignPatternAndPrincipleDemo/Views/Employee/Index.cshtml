@@ -1,0 +1,98 @@
+﻿@using darkstar.core
+@model IEnumerable<Employee>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@Html.ActionLink("AddEmployee", "AddEmployee")
+
+<div ng-app="DEMOAPP" ng-controller="MainCtrl">
+    <table class="table table-bordered table-condensed">
+        <thead>
+            <tr>
+                <td>
+                    Code
+                </td>
+                <td>
+                    Name
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var m in Model)
+            {
+                <tr>
+                    <td>@m.EmployeeCode</td>
+                    <td>@m.LastName, @m.FirstName @m.MiddleName</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+    <table class="table table-bordered table-condensed">
+        <thead>
+            <tr>
+                <td>
+                    Code
+                </td>
+                <td>
+                    Name
+                </td>
+
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="a in tableList">
+                <td>{{a.EmployeeCode}}</td>
+                <td>{{a.LastName + ', ' + a.FirstName + ' ' + a.MiddleName}}</td>
+            </tr>
+            
+        </tbody>
+    </table>
+    
+</div>
+
+<script src="~/Scripts/angular.js"></script>
+<script>
+
+
+    (function () {
+
+        const BASE_URL = @Url.Content("~/");
+
+        var app = angular.module('DEMOAPP', [])
+
+        app.controller('MainCtrl', ['$scope','EmployeeService', function ($scope,$eService) {
+
+            $scope.tableList = []
+            $eService.GetList().then(function(d){
+                console.log(d.data.DataResult)
+                $scope.tableList = d.data.DataResult
+            })
+
+
+        }])
+        .service('EmployeeService',function ($http, $location) {
+
+            var header = { 'Content-Type': 'application/json;charset=utf-8' }
+
+            this.GetList = function (q) {
+                var req = {
+                    method: 'GET',
+                    cache: false,
+                    url: BASE_URL + 'api/Employee/GetList',
+                    headers: header
+                }
+                return $http(req);
+            }
+        })
+    }())
+</script>
+
+
+
+
