@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.Entity;
 using System.Data.Entity.Migrations;
 using System.Data.Entity.ModelConfiguration.Conventions;
+using darkstar.core.Model;
 
 namespace darkstar.core
 {
@@ -14,6 +15,9 @@ namespace darkstar.core
 
         public DbSet<Employee> Employees { get; set; }
         public DbSet<Department> Departments { get; set; }
+        public DbSet<Teacher> Teachers { get; set; }
+        public DbSet<Student> Students { get; set; }
+
         public CompanyCtx() : base("darkstar")
         {
         }

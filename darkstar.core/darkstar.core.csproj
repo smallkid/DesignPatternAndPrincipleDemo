@@ -63,9 +63,16 @@
     <Compile Include="Migrations\202001092229122_initial_migration.designer.cs">
       <DependentUpon>202001092229122_initial_migration.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202001100314152_update_20200110.cs" />
+    <Compile Include="Migrations\202001100314152_update_20200110.designer.cs">
+      <DependentUpon>202001100314152_update_20200110.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\Department.cs" />
     <Compile Include="Model\Employee.cs" />
+    <Compile Include="Model\Person.cs" />
+    <Compile Include="Model\Teacher.cs" />
+    <Compile Include="Model\Student.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -75,6 +82,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202001092229122_initial_migration.resx">
       <DependentUpon>202001092229122_initial_migration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202001100314152_update_20200110.resx">
+      <DependentUpon>202001100314152_update_20200110.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -41,4 +41,40 @@ public class Post : IPostCreate, IPostRead
     {
         Console.WriteLine("Create Post");
     }
+
+
+    class PostCreate : IPostCreate
+    {
+        public void CreatePost()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    interface IPostDelete : IPostCreate
+    {
+        void DeletePost();
+
+    }
+
+    class DeletePost : IPostDelete
+    {
+        public void CreatePost()
+        {
+            throw new NotImplementedException();
+        }
+
+        void IPostDelete.DeletePost()
+        {
+            throw new NotImplementedException();
+        }
+    }
+
+    class Main
+    {
+        public Main()
+        {
+            IPostCreate a = new Post();
+        }
+    }
 }
